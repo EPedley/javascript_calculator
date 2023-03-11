@@ -2,6 +2,7 @@ let runningTotal = "";
 let num = "";
 let operander = "";
 let operanderCount = 0;
+let decimalCount = 0;
 
 const result = document.querySelector(".result");
 const calculation = document.querySelector(".calculation");
@@ -93,7 +94,18 @@ function operate(a, b, operander, tempOperander) {
 
 //concatenate numbers
 function createNumber(a) {
-    return num += a;
+    if (a === ".") {
+        if (decimalCount === 0) {
+            decimalCount++;
+            return num += a;
+        }
+        else {
+            return num;
+        }
+    }
+    else {
+        return num += a;
+    } 
 }
 
 //when a user clicks a number, change a
@@ -111,6 +123,7 @@ document.querySelectorAll('#number-buttons').forEach(button => {
 document.querySelectorAll('#function-buttons').forEach(button => {
     button.addEventListener('click', function()  {
         ++operanderCount;
+        decimalCount = 0;
         let tempOperander = button.value
 
         //the first time the user clicks a function button we dont need to perform a functio
@@ -163,6 +176,7 @@ function clearFunction() {
     calculation.innerHTML = "";
     result.innerHTML = runningTotal;
     operanderCount = 0;
+    decimalCount = 0;
 }
 
 //delete function
