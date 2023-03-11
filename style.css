@@ -44,18 +44,6 @@ body {
     padding-top: 25px;
 }
 
-button {
-    width: 80px;
-    height: 70px;
-    background-color: #70cdbb;
-    border-radius: 5px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-    font-size: 20px;
-    border: 2px solid black;
-
-}
-
 input {
     width: 80px;
     height: 70px;
@@ -79,7 +67,7 @@ input:hover {
  }
 
 .clear-buttons {
-    width: 172px;
+    width: 180px;
     background-color: rgb(81, 216, 216);
     text-align: center;
 }
